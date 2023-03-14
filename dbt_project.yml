@@ -2,13 +2,13 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'phd_analytics'
+name: 'lm_analytics'
 version: '1.0.0'
 config-version: 2
 #require-dbt-version: '>=1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'phd_analytics'
+profile: 'lm_analytics'
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -35,18 +35,18 @@ tests:
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
-models:
-  phd_analytics:
-    # Config indicated by + and applies to all files under models/example/
-    2_phd_stage_vault:
-      +materialized: view
-      +schema: stage_vault
-    3_phd_raw_vault:
-      +materialized: incremental
-      +schema: raw_vault
-    # 4_phd_bus_vault:
-    #   +materialized: table
-    #   +schema: bus_vault
-    5_phd_mart:
-      +materialized: table 
-      +schema: mart
+# models:
+#   lm_analytics:
+#     # Config indicated by + and applies to all files under models/example/
+#     2_lm_stage_vault:
+#       +materialized: view
+#       +schema: stage_vault
+#     3_lm_raw_vault:
+#       +materialized: incremental
+#       +schema: raw_vault
+#     # 4_lm_bus_vault:
+#     #   +materialized: table
+#     #   +schema: bus_vault
+#     5_lm_mart:
+#       +materialized: table 
+#       +schema: mart

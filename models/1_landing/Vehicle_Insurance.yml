@@ -1,9 +1,8 @@
 version: 2
-
 sources:
-  - name: dw_landing
+  - name: mydw_source
     description: "{{ doc('Vehicle_Insurance') }}"
-    schema: dw_landing
+    schema: mydw_source
     tables:
       - name: "vehicle_insurance"
         description: "{{ doc('Vehicle_Insurance') }}"
