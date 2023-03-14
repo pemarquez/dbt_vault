@@ -1,0 +1,1 @@
+python set-dbt-configuration.py --configurtion-directory=/home/ec2-user/environment/hhs-phd-curation/dbt_config --run-environment dev --application-name phh-reporting --client-name hhs-phd

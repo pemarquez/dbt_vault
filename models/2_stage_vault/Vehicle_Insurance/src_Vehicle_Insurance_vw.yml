@@ -1,0 +1,61 @@
+version: 2
+
+models:        
+  - name: src_vehicle_insurance_vw
+    owner: "@bp"
+    model_maturity: in dev
+    description: "{{ doc('src_vehicle_insurance_vw') }}"
+    config:
+        materialized: view
+        schema: stage_vault
+        tags: 
+         - vehicle_insurance
+         - daily  
+
+    columns:
+      - name: vehicle_insurance_id
+        meta:
+          contains_pii: false
+        description: "{{ doc('vehicle_insurance_id') }}"
+        tests:
+          - not_null
+      - name:  Gender
+        meta:
+            contains_pii: false
+        description: "{{ doc('Gender') }}"
+      - name:  Age
+        meta:
+            contains_pii: false
+        description: "{{ doc('Age') }}"
+      - name:  Driving_License
+        meta:
+            contains_pii: false
+        description: "{{ doc('Driving_License') }}"
+      - name:  Region_Code
+        meta:
+            contains_pii: false
+        description: "{{ doc('Region_Code') }}"
+      - name:  Previously_Insured
+        meta:
+            contains_pii: false
+        description: "{{ doc('Previously_Insured') }}"
+      - name:  Vehicle_Age
+        meta:
+            contains_pii: false
+        description: "{{ doc('Vehicle_Age') }}"
+      - name:  Vehicle_Damage
+        meta:
+            contains_pii: false
+        description: "{{ doc('Vehicle_Damage') }}"
+      - name:  Annual_Premium
+        meta:
+            contains_pii: false
+        description: "{{ doc('Annual_Premium') }}"
+      - name:  Policy_Sales_Channel
+        meta:
+            contains_pii: false
+        description: "{{ doc('Policy_Sales_Channel') }}"                    
+      - name:  Vintage
+        meta:
+            contains_pii: false
+        description: "{{ doc('Vintage') }}"          

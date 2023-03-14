@@ -1,0 +1,51 @@
+
+version: 2
+
+models:
+
+  - name: vehicle_insurance_hub
+    description: "{{ doc('vehicle_insurance_hub') }}"      
+    config:
+      materialized: incremental
+      schema: raw_vault 
+      tags:
+        - vehicle_insurance
+        - daily 
+
+        
+    columns:
+    
+      - name: incident_id
+        meta:
+          contains_pii: false
+        description: "{{ doc('incident_id') }}"
+        tests:
+          - not_null
+          
+          
+      - name: vehicle_insurance_hk
+        meta:
+          contains_pii: false
+        description: "{{ doc('hash_key') }}"
+        tests:
+          - unique
+          - not_null
+          
+      - name: vehicle_insurance_number
+        meta:
+          contains_pii: false
+        description:  "{{ doc('vehicle_insurance_number') }}"
+
+      - name: etl_load_datetime
+        meta:
+          contains_pii: false
+        description: "{{ doc('etl_load_datetime') }}"
+
+
+      - name: source
+        meta:
+          contains_pii: false
+        description: "{{ doc('source') }}"
+
+
+  

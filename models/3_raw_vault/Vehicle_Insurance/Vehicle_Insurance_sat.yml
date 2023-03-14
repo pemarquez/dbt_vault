@@ -1,0 +1,90 @@
+
+version: 2
+
+models:
+  - name: vehicle_insurance_sat
+    description: "{{ doc('vehicle_insurance_sat') }}"
+    config:
+      materialized: incremental
+      schema: raw_vault
+      tags:
+        - vehicle_insurance
+        - daily   
+ 
+    columns:
+
+      - name: vehicle_insurance_hk
+        meta:
+          contains_pii: false
+        description: "{{ doc('hash_key') }}"
+        tests:
+          - not_null
+          
+      - name: hashdiff
+        meta:
+          contains_pii: false
+        description: "{{ doc('hashdiff') }}"
+        tests:
+          - not_null
+                   
+
+
+
+      - name: rec_create_date
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_create_date') }}"
+        tests:
+          - not_null
+
+      - name: rec_update_date
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_update_date') }}"
+        tests:
+          - not_null
+
+      - name: rec_create_by
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_create_by') }}"
+
+      - name: rec_update_by
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_update_by') }}"
+
+      - name: etl_load_datetime
+        meta:
+          contains_pii: false
+        description: "{{ doc('etl_load_datetime') }}"
+
+      - name: source
+        meta:
+          contains_pii: false
+        description: "{{ doc('source') }}"
+
+        
+      - name: effective_from
+        meta:
+          contains_pii: false
+        description: "{{ doc('effective_from') }}"
+        
+        
+      - name: hashdiff
+        meta:
+          contains_pii: false
+        description: "{{ doc('hashdiff') }}"
+        
+      - name: etl_load_datetime
+        meta:
+          contains_pii: false
+        description: "{{ doc('etl_load_datetime') }}"
+
+      - name: source
+        meta:
+          contains_pii: false
+        description: "{{ doc('source') }}"
+        
+        
+      

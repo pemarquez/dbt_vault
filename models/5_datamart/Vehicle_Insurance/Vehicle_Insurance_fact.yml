@@ -1,0 +1,105 @@
+version: 2
+
+models:
+
+  - name: vehicle_insurance_dim
+    description: "{{ doc('vehicle_insurance_dim') }}" 
+    config:
+      materialized: incremental
+      schema: mart
+      tags:
+        - vehicle_insurance
+        - daily 
+  
+        
+    columns:
+  
+      - name: vehicle_insurance_dim_id
+        meta:
+          contains_pii: false
+        description: "{{ doc('vehicle_insurance_dim_id') }}"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+      - name: vehicle_insurance_id
+        meta:
+          contains_pii: false
+        description: "{{ doc('vehicle_insurance_id') }}"
+        tests:
+          - not_null
+      - name:  Gender
+        meta:
+            contains_pii: false
+        description: "{{ doc('Gender') }}"
+      - name:  Age
+        meta:
+            contains_pii: false
+        description: "{{ doc('Age') }}"
+      - name:  Driving_License
+        meta:
+            contains_pii: false
+        description: "{{ doc('Driving_License') }}"
+      - name:  Region_Code
+        meta:
+            contains_pii: false
+        description: "{{ doc('Region_Code') }}"
+      - name:  Previously_Insured
+        meta:
+            contains_pii: false
+        description: "{{ doc('Previously_Insured') }}"
+      - name:  Vehicle_Age
+        meta:
+            contains_pii: false
+        description: "{{ doc('Vehicle_Age') }}"
+      - name:  Vehicle_Damage
+        meta:
+            contains_pii: false
+        description: "{{ doc('Vehicle_Damage') }}"
+      - name:  Annual_Premium
+        meta:
+            contains_pii: false
+        description: "{{ doc('Annual_Premium') }}"
+      - name:  Policy_Sales_Channel
+        meta:
+            contains_pii: false
+        description: "{{ doc('Policy_Sales_Channel') }}"                    
+      - name:  Vintage
+        meta:
+            contains_pii: false
+        description: "{{ doc('Vintage') }}"  
+
+      - name: rec_create_date
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_create_date') }}"
+        tests:
+          - not_null
+
+                  
+          
+          
+      - name: rec_update_date
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_update_date') }}"
+        tests:
+          - not_null
+          
+      - name: incident_id
+        meta:
+          contains_pii: false
+        description: "{{ doc('incident_id') }}"
+        tests:
+          - not_null
+          
+      - name: rec_create_by
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_create_by') }}"
+
+      - name: rec_update_by
+        meta:
+          contains_pii: false
+        description: "{{ doc('rec_update_by') }}"
+        

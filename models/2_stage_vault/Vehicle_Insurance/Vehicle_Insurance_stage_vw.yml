@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: vehicle_insurance_stage_vw
+    description: "{{ doc('vehicle_insurance_stage_vw') }}"
+    tests:
+      - unique:
+          column_name: "incident_id || '-' || vehicle_insurance_number"
+    config:
+        materialized: view
+        schema: stage_vault
+        tags:
+         - vehicle_insurance
+         - daily
+
+    columns:
+      - name: effective_from
+        meta:
+          contains_pii: false
+        description: "{{ doc('effective_from') }}"
+        
+         
+      - name: end_date
+        meta:
+          contains_pii: false
+        description: "{{ doc('end_date') }}"
+        
+          
+      - name: vehicle_insurance_hk
+        meta:
+          contains_pii: false
+        description: "{{ doc('hash_key') }}"
+        
+          
+      - name: hashdiff
+        meta:
+          contains_pii: false
+        description: "{{ doc('hashdiff') }}"
+        
+      - name: etl_load_datetime
+        meta:
+          contains_pii: false
+        description: "{{ doc('etl_load_datetime') }}"
+
+      - name: source
+        meta:
+          contains_pii: false
+        description: "{{ doc('source') }}"
+        
+        
+      

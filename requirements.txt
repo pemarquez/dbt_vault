@@ -1,0 +1,5 @@
+dbt-core
+dbt-postgres
+PyPI
+boto3
+pydash
