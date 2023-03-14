@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ```
 
 
-### At this point the Cloud 9 environment is ready for DBT development. Happy modelling!!
+### At this point the Cloud 9 environment is ready for DBT development.
 
 ## use below DBT commands to compile, test & run the models:
 *****************************************************
