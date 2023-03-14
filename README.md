@@ -1,5 +1,5 @@
 
-# Welcome to PHD curation DBT Code repository!
+# Welcome to Data Vault curation example DBT Code repository!
 *********************************************
 *********************************************
 
