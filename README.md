@@ -142,7 +142,7 @@ Standards used in PHD DBT models:
 
 - The second level must represent dbt stage ( ex: stage, raw_vault,bus_vault or _mart)
 
-- The third level must identify the dataset, e.g., for the “CalREDIE UDF” view as a source, the name could be calredie_udf, for the “CalREDIE Lab” view, the name could be calredie_lab, and for the “CalREDIE system” view, calredie_sys.
+- The third level must identify the dataset, e.g., for the “Vehicle_Insurance ” 
 
 - - Each top-level configuration should use a separate `.yml` file (i.e, sources, models)
   Example:
