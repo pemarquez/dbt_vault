@@ -127,9 +127,9 @@ See [Model Layers](#model-layers) for more information.
   | _mart     | /models/5_mart      |   Marts are where valuable information is finally delivered to the business users typically through reports or dashboards.  Indicates a final data which is robust, versatile, and ready for consumption. Typically marts contains facts and dimension tables:<ul>A fact in data warehousing describes quantitative transactional data like measurements, metrics, or the values ready for analysis.Dimension Tables hold the descriptive information for all related fields that are included in the fact table’s records. </ul>  |
 
 
-## Model File Naming standards for PHD DaaS
+## Model File Naming standards 
 
-Standards used in PHD DBT models: 
+Standards used in  DBT models: 
 - System-based names, e.g., tables and table column names, are denoted in Consolas font:  load_date. 
 - All objects should have a prefix to indicate their DAG stage in the flow.  
   See [Model Layers](#model-layers) for more information.
