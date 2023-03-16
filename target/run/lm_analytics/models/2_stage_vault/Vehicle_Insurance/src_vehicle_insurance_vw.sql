@@ -1,5 +1,7 @@
 
-  create view "mydw"."mydw_stage_vault"."src_vehicle_insurance_vw__dbt_tmp" as (
+  create or replace   view mydw.dbt_bpeddi_stage_vault.src_vehicle_insurance_vw
+  
+   as (
     with 
 -- Import CTEs
 -- this query loads all data during full load and reads only delta during incremental load 
@@ -21,7 +23,7 @@ transform_vehicle_insurance as (
         'DBT ETL' as rec_create_by,
         'DBT ETL' as rec_update_by
 
-        from  "mydw"."mydw_source"."vehicle_insurance"    
+        from  mydw.mydw_source.vehicle_insurance    
 
 ) ,
 
@@ -52,3 +54,4 @@ final as (
 -- Simple select statement
 select * from final
   );
+

@@ -19,7 +19,7 @@ transform_vehicle_insurance as (
         'DBT ETL' as rec_create_by,
         'DBT ETL' as rec_update_by
 
-        from  "mydw"."mydw_source"."vehicle_insurance"    
+        from  mydw.mydw_source.vehicle_insurance    
 
 ) ,
 
