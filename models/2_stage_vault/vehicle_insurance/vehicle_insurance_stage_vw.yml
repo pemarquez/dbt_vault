@@ -5,10 +5,10 @@ models:
     description: "{{ doc('vehicle_insurance_stage_vw') }}"
     tests:
       - unique:
-          column_name: "incident_id || '-' || vehicle_insurance_number"
+          column_name: "VEHICLE_INSURANCE_ID || '-' || ANNUAL_PREMIUM"
     config:
         materialized: view
-        schema: stage_vault
+        schema: dbt_test
         tags:
          - vehicle_insurance
          - daily
