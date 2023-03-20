@@ -38,9 +38,6 @@ WITH row_rank_1 AS (
 records_to_insert AS (
     SELECT a."VEHICLE_INSURANCE_HK", a."VEHICLE_INSURANCE_ID", a."ETL_LOAD_DATETIME", a."SOURCE"
     FROM row_rank_1 AS a
-    LEFT JOIN DBT_TEST.dbt_test_dbt_test.vehicle_insurance_hub AS d
-    ON a."VEHICLE_INSURANCE_HK" = d."VEHICLE_INSURANCE_HK"
-    WHERE d."VEHICLE_INSURANCE_HK" IS NULL
 )
 
 SELECT * FROM records_to_insert

@@ -2,7 +2,7 @@
   
     
 
-        create or replace transient table DBT_TEST.dbt_test_raw_vault.vehicle_insurance_sat  as
+        create or replace transient table DBT_TEST.dbt_test.vehicle_insurance_sat  as
         (/* set yaml_metadata and endset are used for assigning variable ( key value pairs) *//* fromyml() built-in jinja function  assigns values to variables */
 
 

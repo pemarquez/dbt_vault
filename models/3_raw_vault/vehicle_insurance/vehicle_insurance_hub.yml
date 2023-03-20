@@ -7,7 +7,6 @@ models:
     description: "{{ doc('vehicle_insurance_hub') }}"      
     config:
       materialized: incremental
-      schema: dbt_test 
       tags:
         - vehicle_insurance
         - daily 

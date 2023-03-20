@@ -6,7 +6,6 @@ models:
     description: "{{ doc('vehicle_insurance_sat') }}"
     config:
       materialized: incremental
-      schema: raw_vault
       tags:
         - vehicle_insurance
         - daily   
