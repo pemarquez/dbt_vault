@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-  - name: vehicle_insurance_dim
+  - name: vehicle_insurance_fact
     description: "{{ doc('vehicle_insurance_dim') }}" 
     config:
       materialized: incremental
@@ -86,12 +86,7 @@ models:
         tests:
           - not_null
           
-      - name: incident_id
-        meta:
-          contains_pii: false
-        description: "{{ doc('incident_id') }}"
-        tests:
-          - not_null
+
           
       - name: rec_create_by
         meta:

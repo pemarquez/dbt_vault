@@ -4,10 +4,10 @@ sources:
     description: "{{ doc('Vehicle_Insurance') }}"
     schema: mydw_source
     tables:
-      - name: "vehicle_insurance"
+      - name: "insurence_source"
         description: "{{ doc('Vehicle_Insurance') }}"
         columns:
-          - name: vehicle_insurance_id
+          - name: insurence_source
             meta:
               contains_pii: false
             description: "{{ doc('vehicle_insurance_id') }}"
