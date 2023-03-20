@@ -1,11 +1,11 @@
 version: 2
 sources:
-  - name: dbt_test
+  - name: landing
     database: dbt_test
     schema: dbt_test
     description: "{{ doc('Vehicle_Insurance') }}"
     tables:
-      - name: "insurance_source"
+      - name: vehicle_insurance
         description: "{{ doc('Vehicle_Insurance') }}"
         columns:
           - name: insurance_source
