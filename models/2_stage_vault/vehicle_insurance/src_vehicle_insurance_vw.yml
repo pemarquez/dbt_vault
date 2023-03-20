@@ -1,13 +1,9 @@
 version: 2
-
 models:        
   - name: src_vehicle_insurance_vw
-    owner: "@bp"
-    model_maturity: in dev
     description: "{{ doc('src_vehicle_insurance_vw') }}"
     config:
         materialized: view
-        schema: stage_vault
         tags: 
          - vehicle_insurance
          - daily  

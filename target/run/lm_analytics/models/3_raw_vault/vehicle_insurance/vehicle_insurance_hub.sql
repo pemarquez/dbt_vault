@@ -1,9 +1,11 @@
-
-      insert into "mydw"."mydw_raw_vault"."vehicle_insurance_hub" ("vehicle_insurance_hk", "vehicle_insurance_id", "etl_load_datetime", "source")
-    (
-        select "vehicle_insurance_hk", "vehicle_insurance_id", "etl_load_datetime", "source"
-        from "vehicle_insurance_hub__dbt_tmp161357453552"
-    )
-
-
+-- back compat for old kwarg name
   
+  begin;
+    
+
+        insert into DBT_TEST.dbt_test_dbt_test.vehicle_insurance_hub ("VEHICLE_INSURANCE_HK", "VEHICLE_INSURANCE_ID", "ETL_LOAD_DATETIME", "SOURCE")
+        (
+            select "VEHICLE_INSURANCE_HK", "VEHICLE_INSURANCE_ID", "ETL_LOAD_DATETIME", "SOURCE"
+            from DBT_TEST.dbt_test_dbt_test.vehicle_insurance_hub__dbt_tmp
+        );
+    commit;
