@@ -1,5 +1,7 @@
 
-  create view "mydw"."mydw_stage_vault"."src_vehicle_insurance_vw__dbt_tmp" as (
+  create or replace   view DBT_TEST.dbt_test.src_vehicle_insurance_vw
+  
+   as (
     with 
 -- Import CTEs
 -- this query loads all data during full load and reads only delta during incremental load 
@@ -16,12 +18,12 @@ transform_vehicle_insurance as (
         annual_premium,
         policy_sales_channel,
         vintage,
-        now() - interval '+1 day' as rec_create_date,
-        now()::timestamp as rec_update_date,
+        current_timestamp - interval '+1 day' as rec_create_date,
+        current_date as rec_update_date,
         'dbt etl' as rec_create_by,
         'dbt etl' as rec_update_by
 
-        from  "mydw"."mydw_source"."insurence_source"    
+        from  dbt_test.dbt_test.vehicle_insurance    
 
 ) ,
 
@@ -52,3 +54,4 @@ final as (
 -- Simple select statement
 select * from final
   );
+
