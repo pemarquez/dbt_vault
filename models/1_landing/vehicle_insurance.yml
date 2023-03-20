@@ -1,8 +1,9 @@
 version: 2
 sources:
-  - name: mydw_source
+  - name: dbt_test
     description: "{{ doc('Vehicle_Insurance') }}"
-    schema: mydw_source
+    schema: dbt_test
+    database: dbt_test
     tables:
       - name: "insurence_source"
         description: "{{ doc('Vehicle_Insurance') }}"
