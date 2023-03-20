@@ -14,12 +14,12 @@ transform_vehicle_insurance as (
         annual_premium,
         policy_sales_channel,
         vintage,
-        now() - interval '+1 day' as rec_create_date,
-        now()::timestamp as rec_update_date,
+        current_timestamp - interval '+1 day' as rec_create_date,
+        current_date as rec_update_date,
         'dbt etl' as rec_create_by,
         'dbt etl' as rec_update_by
 
-        from  {{ source('dbt_test','vehicle_insurance') }}    
+        from  {{ source('dbt_test','VEHICLE_INSURANCE') }}    
 
 ) ,
 

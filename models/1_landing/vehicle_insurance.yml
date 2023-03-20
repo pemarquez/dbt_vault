@@ -1,14 +1,13 @@
 version: 2
 sources:
   - name: dbt_test
-    description: "{{ doc('Vehicle_Insurance') }}"
-    schema: dbt_test
     database: dbt_test
+    description: "{{ doc('Vehicle_Insurance') }}"
     tables:
-      - name: "insurence_source"
+      - name: "insurance_source"
         description: "{{ doc('Vehicle_Insurance') }}"
         columns:
-          - name: insurence_source
+          - name: insurance_source
             meta:
               contains_pii: false
             description: "{{ doc('vehicle_insurance_id') }}"

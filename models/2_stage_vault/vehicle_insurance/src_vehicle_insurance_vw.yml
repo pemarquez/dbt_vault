@@ -1,5 +1,10 @@
 version: 2
 
+sources:
+  - name: dbt_test
+    database: dbt_test
+    schema: dbt_test
+
 models:        
   - name: src_vehicle_insurance_vw
     owner: "@bp"
@@ -7,8 +12,6 @@ models:
     description: "{{ doc('src_vehicle_insurance_vw') }}"
     config:
         materialized: view
-        schema: dbt_test
-        database: dbt_test
         tags: 
          - vehicle_insurance
          - daily  
